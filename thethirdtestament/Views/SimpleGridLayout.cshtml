@@ -1,0 +1,14 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.SimpleGridLayout>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Master.cshtml";
+}
+
+<div class="row" id="single-symbol-page-header" style="text-align:center">
+    <div class="col-12" style="margin-bottom:50px">
+        <h1>@Html.Raw(Model.Content.Title.Replace("\\n", "<br />"))</h1>
+    </div>
+</div>
+
+
+@Html.GetGridHtml(Model.Content, "mainContent", "bootstrap3")

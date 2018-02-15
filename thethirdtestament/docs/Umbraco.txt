@@ -1,0 +1,10 @@
+﻿
+Image Cropper
+https://our.umbraco.org/documentation/getting-started/backoffice/property-editors/built-in-property-editors/image-cropper
+
+
+http://sinfomania.com/tutorials/umbraco-7x/developer/data-types/responsive-images-with-image-cropper-multimedia-picker/
+https://edgewebware.com/2016/04/umbraco-ucommerce-using-image-cropper-tool/
+http://www.computermagic.gr/tutorials/umbraco-7/property-editors/image-cropper/
+
+https://24days.in/umbraco-cms/2014/all-your-images-are-belong-to-umbraco/

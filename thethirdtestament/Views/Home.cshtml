@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+@* the fun starts here *@
+
+<div class="row">
+    <div class="col-12">
+        <h1> </h1>
+        <div>&nbsp;</div>
+    </div>
+</div>
+
+@Html.GetGridHtml(Model.Content, "mainContent", "bootstrap3")

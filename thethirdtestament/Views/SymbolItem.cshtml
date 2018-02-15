@@ -1,0 +1,72 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.SymbolItem>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Master.cshtml";
+}
+<div class="row" id="single-symbol-page-header" style="text-align:center">
+    <div class="col-12" style="margin-bottom:50px">
+        <h1>@Model.Title (@Model.Name)</h1>
+    </div>
+</div>
+
+
+@{
+    var imageFile = Model.ImageFile;
+    var mediaFile = Umbraco.TypedMedia(imageFile.Id);
+
+    var height = mediaFile.GetPropertyValue<int>("umbracoHeight");
+    var width = mediaFile.GetPropertyValue<int>("umbracoWidth");
+
+    var cropUrl = "";
+    var imageWith = 0;
+    if (width >= height)
+    {
+        imageWith = 800;
+        cropUrl = Model.GetCropUrl(imageWith, null, "imageCrop");
+    }
+    else
+    {
+        imageWith = 600;
+        cropUrl = Model.GetCropUrl(imageWith, null, "imageCrop");
+
+    }
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <figure class="item" style="width:100%;margin-left: auto;margin-right: auto;">
+            <img src="@cropUrl" alt="@Model.Name" style="width:auto;height:auto;max-width:100%;max-height:100%;border:solid 1px" />
+            <figcaption class="caption" style="width:@imageWith@Html.Raw("px");"> @Model.SymbolTitle. ©&nbsp;Martinus&nbsp;Institut</figcaption>
+        </figure>
+    </div>
+</div>
+
+<div class="row">
+
+    @*Left panel *@
+    @{
+        var selection = Model.Parent.Children.Where(x => x.IsVisible()).OrderBy(x => x.GetPropertyValue<int>("SymbolNo"));
+
+    }
+
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Other Symbols</h3>
+                <ul>
+                    @foreach (var symbolItem in selection)
+                    {
+                        <li>
+                            <a href="@symbolItem.Url">@symbolItem.Name</a>: @symbolItem.GetPropertyValue("Title")
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-8">
+        <h2>A Short Explanation of @Model.Name. @Model.Title</h2>
+        @Model.Explanation
+    </div>
+</div>

@@ -1,0 +1,24 @@
+Inspirational websites
+- https://www.thecompleteuniversityguide.co.uk/courses/choosing-a-course/
+- http://www.independent.co.uk/register (fat footer, top menu)
+- https://www.microsoft.com/da-dk/windows/ (top menu)
+
+
+Top 30 Best Serif Fonts
+http://www.vectordiary.com/fonts/top-30-best-serif-fonts/
+
+Bookman Old Style
+Georgia
+
+Century
+Times
+Garamond
+
+
+Links with customized underline
+
+https://stackoverflow.com/questions/13840403/edit-line-thickness-of-css-underline-attibute
+
+https://css-tricks.com/styling-underlines-web/
+
+* https://stackoverflow.com/questions/34047471/how-to-change-underline-thickness-of-an-a-tag-without-using-border
