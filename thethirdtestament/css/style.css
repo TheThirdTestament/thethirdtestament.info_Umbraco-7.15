@@ -2,6 +2,7 @@
 body {
     margin: 0;
 }
+
 html {
     position: relative;
     min-height: 100%;
@@ -98,7 +99,6 @@ figure.item {
 
 a {
     color: #0060AC;
-   
 }
 
 a:hover {
@@ -113,7 +113,6 @@ a.nav-link, a:visited.nav-link, a:link.nav-linkactive {
 
 a.nav-link:hover {
     text-decoration: underline;
-        
 }
 
 nav ul.navbar-nav > li.nav-item {
@@ -124,9 +123,6 @@ nav ul.navbar-nav > li.nav-item {
 .dropdown-menu > .nav-link {
     text-transform: initial;
 }
-
-
-
 
 .current {
     font-weight: bold;
@@ -187,7 +183,6 @@ footer {
 .social-media .fa-facebook:hover {
     color: #395692;
 }
-
 .social-media .fa-linkedin:hover {
     color: #007FB2;
 }
@@ -247,9 +242,9 @@ footer {
         height: 11em;
     }
 
-        footer div.col-md-3 {
+    footer div.col-md-3 {
             min-width: unset;
-        }
+    }
 
     .social-media {
         font-size: 1.5em;
