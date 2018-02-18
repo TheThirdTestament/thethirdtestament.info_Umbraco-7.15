@@ -13,7 +13,7 @@ body {
 }
 
 #wrap {
-    padding-bottom: 10em;
+    padding-bottom: 4em;
 }
 
 div#logo {
@@ -42,7 +42,7 @@ div.main {
 }
 
 .two-column-frontpage-image {
-    padding-top: 6em;
+    padding-top: 2em;
 }
 
 .article {
@@ -69,6 +69,7 @@ h3 {
 div.card {
     background-color: #F5F8FA;
     width: 90%;
+    margin-bottom:4em;
 }
 
 li {
@@ -95,6 +96,10 @@ figure.item {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 2em;
+    font-style: italic;
+    font-size: 0.9em;
+
 }
 
 a {
@@ -160,15 +165,17 @@ div .quote {
     color: darkred;
 }
 
+ul.symbol-item-symbol-list {
+        padding-left: 2em;
+    }
 
 footer {
-    padding: 20px 0 10px 0;
+    padding-top: 2em;
     font-size: 0.9rem;
     position: absolute;
     bottom: 0;
     width: 100%;
     background-color: #EEE;
-    padding-top: 2em;
     width: 100%;
     bottom: 0;
     /* Set the fixed height of the footer here */
@@ -200,15 +207,23 @@ footer {
     }
 }
 
+
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
+    ul.symbol-item-symbol-list {
+        padding-left: 1.2em;
+    }
+    div.card {
+        margin-bottom: 2em;
+    }
+
     footer {
         height: 20em;
     }
 
-        footer div.col-md-3 {
-            min-width: 50%;
-        }
+    footer div.col-md-3 {
+        min-width: 50%;
+    }
 }
 
 /*Large devices (desktops, 992px and up)*/
@@ -237,9 +252,15 @@ footer {
     .form-horizontal .control-label {
         text-align: right;
     }
+
+    ul.symbol-item-symbol-list {
+        padding-left: 2em;
+    }
+
+
     /* Set the fixed height of the footer here */
     footer {
-        height: 11em;
+        height: 12em;
     }
 
     footer div.col-md-3 {

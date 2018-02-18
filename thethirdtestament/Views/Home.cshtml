@@ -1,4 +1,5 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Home>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Master.cshtml";
 }
@@ -12,4 +13,11 @@
     </div>
 </div>
 
-@Html.GetGridHtml(Model.Content, "mainContent", "bootstrap3")
+@Html.GetGridHtml(Model, "mainContent", "bootstrap3")
+
+
+<div class="col-md-8 column">
+    <div class="two-column-frontpage-image">
+        <img srcset="@Model.Image.Url?width=320 320w, @Model.Image.Url?width=420 480w, @Model.Image.Url 680w" sizes="(max-width: 320px) 310px, (max-width: 480px) 460px, 600px" src="@Model.Image.Url" alt="The Third Testament" />
+    </div>
+</div> 
