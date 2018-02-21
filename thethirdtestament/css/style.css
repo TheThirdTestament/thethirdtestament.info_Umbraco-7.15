@@ -72,6 +72,11 @@ div.card {
     margin-bottom:4em;
 }
 
+div.text-body {
+    padding-right: 5em;
+}
+
+
 li {
     margin: 0 0 7px 0;
 }
@@ -152,8 +157,8 @@ div.author span {
 }
 
 
-div .quote {
-    margin: 0 2rem 0 2rem;
+p.quote {
+    margin: 0 2rem 1.5rem 2rem;
 }
 
 .form-horizontal .control-label {

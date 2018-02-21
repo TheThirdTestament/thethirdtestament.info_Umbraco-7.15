@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ContactForm>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContactForm>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
 	Layout = "Master.cshtml";
@@ -9,6 +9,7 @@
         <h1 class="contact-form-header" style="margin-bottom:1em;">@Model.Title</h1>
     </div>
 </div>
+
 <div class="row">
     <div class="col-12">
         @Html.Action("Index", "ContactFormSurface")

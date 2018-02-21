@@ -35,8 +35,16 @@
             </div>
         </div>
     </div>    
-    <div class="col-sm-8 article">
-        <div>@Model.Intro</div>
-        <div>@Model.Content</div>
+    <div class="col-sm-8 article text-body">
+
+        @if (@Model.Intro != null) {
+            @Model.Intro
+        }
+
+        @if (@Model.Content != null) {
+            @Model.Content
+        }
+
+
     </div>
 </div>
