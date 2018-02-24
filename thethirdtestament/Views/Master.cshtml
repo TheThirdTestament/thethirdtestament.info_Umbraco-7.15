@@ -27,22 +27,22 @@
         <header class="wrapper clearfix">
             <div class="row">
                 <div class="col-md-3 col-sm-3" id="logo">
-                    <a href="\"><img src="~/Content/Images/logo.jpg" alt="logo" style="max-height:100px;max-width:100px" /></a>
+                    <a href="\"><img src="~/Content/Images/logo.jpg" alt="logo" /></a>
                 </div>
-                <div class="col-md-6 col-sm-9" style="text-align:center">
+                <div class="col-md-6 col-sm-9 center-content">
                     <div id="site-title">@Umbraco.Field("siteTitle", recursive: true)</div>
                     <div id="site-sub-title">The Intellectualised Christianity</div>
                 </div>
                 <div class="col-md-3">
                 </div>
             </div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#fff;padding:0; border-top:solid 2px; border-bottom:solid 2px">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" style="background-color:#fff; margin:0;padding:0" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     @Umbraco.RenderMacro("mainMenu")
                 </div><!-- /.navbar-collapse -->
 

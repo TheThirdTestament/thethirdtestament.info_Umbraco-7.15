@@ -11,22 +11,11 @@
 @{
     var imageFile = Model.ImageFile;
     var mediaFile = Umbraco.TypedMedia(imageFile.Id);
-
     var height = mediaFile.GetPropertyValue<int>("umbracoHeight");
     var width = mediaFile.GetPropertyValue<int>("umbracoWidth");
 
-    var cropUrl = "";
-    var imageWith = 0;
-    if (width >= height)
-    {
-        imageWith = 800;
-    }
-    else
-    {
-        imageWith = 600;
+    int imageWith = (width >= height)? imageWith = 800: imageWith = 600;
 
-
-    }
     int xs = (int)(imageWith * 0.4);
     int sm = (int)(imageWith * 0.6);
     int md = (int)(imageWith * 0.8);
@@ -66,7 +55,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="col-md-8  order-1 order-md-2" id="symbol-explanation">
         <h1>@Model.Title: A Short Explanation of @(WebUtility.HtmlDecode(Model.Name.Replace("No. ", "No.&nbsp;")))</h1>

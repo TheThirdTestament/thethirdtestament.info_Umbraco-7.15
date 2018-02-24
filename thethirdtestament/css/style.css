@@ -1,6 +1,7 @@
 ﻿/* custom style */
 body {
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 html {
@@ -23,7 +24,7 @@ div#logo {
 
 
 div#site-title {
-    font-family: Times, 'Times New Roman', sans-serif;
+    font-family: Times, 'Times New Roman', serif;
     font-size: 175%;
     font-weight: bold;
     color: #0174cc;
@@ -31,7 +32,7 @@ div#site-title {
 }
 
 div#site-sub-title {
-    font-family: Times, 'Times New Roman', sans-serif;
+    font-family: Times, 'Times New Roman', serif;
     font-size: 150%;
     color: #0174cc;
     padding-bottom: 1rem;
@@ -51,31 +52,36 @@ div.main {
 
 
 h1 {
-    font-family: Times, 'Times New Roman', sans-serif;
+    font-family: Times, 'Times New Roman', serif;
     margin-top: 2rem;
     font-size: 180%;
 }
 h2 {
-    font-family: Times, 'Times New Roman', sans-serif;
+    font-family: Times, 'Times New Roman', serif;
     font-size: 140%;
 }
 
 h3 {
-    font-family: Times, 'Times New Roman', sans-serif;
+    font-family: Times, 'Times New Roman', serif;
     font-size: 120%;
     font-weight: bold;
 }
 
+h1.contact-form-header {
+    margin-bottom: 1em;
+}
 
 div.card {
     background-color: #F5F8FA;
     width: 90%;
-    margin-bottom:4em;
+    margin-bottom: 4em;
 }
 
 div.text-body {
     padding-right: 5em;
 }
+
+
 
 
 li {
@@ -132,14 +138,33 @@ a.nav-link, a:visited.nav-link, a:link.nav-linkactive {
     text-transform: uppercase;
 }
 
+div.dropdown-menu a {
+    font-weight:normal;
+}
+
+
 a.nav-link:hover {
     text-decoration: underline;
+}
+
+nav.navbar {
+    background-color: #fff;
+    padding: 0;
+    border-top: solid 2px;
+    border-bottom: solid 2px;
 }
 
 nav ul.navbar-nav > li.nav-item {
     padding: 0 10px 0 10px;
     display: block;
 }
+
+nav div#navbarSupportedContent {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
 
 .dropdown-menu > .nav-link {
     text-transform: initial;
@@ -167,6 +192,10 @@ div.author span {
     font-weight: 600;
 }
 
+div.center-content {
+    text-align: center;
+}
+
 
 p.quote {
     margin: 0 2rem 1.5rem 2rem;
@@ -189,6 +218,12 @@ div#symbol-image div {
  text-align:center;
 }
 
+div#simple-grid-page-header div {
+    margin-bottom: 4rem;
+}
+
+
+
 div#symbol-explanation {
     padding: 0 2em 2em 2em;
 }
@@ -196,11 +231,36 @@ div#symbol-explanation {
 div#symbol-explanation h1 {
     margin-top: 0;
 }
+
+
  
 ul.symbol-item-symbol-list {
     padding-left: 2em;
 }
 
+div#logo img {
+    max-height:100px;
+    max-width:100px;
+}
+
+
+div#symbol-overview {
+    text-align: center;
+    vertical-align: bottom;
+}
+div#symbol-overview img {
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:100%;
+}
+
+
+div#symbol-overview div {
+    margin-top:10px;
+    margin-bottom:50px;
+}
+    
 footer {
     padding-top: 2em;
     font-size: 0.9rem;

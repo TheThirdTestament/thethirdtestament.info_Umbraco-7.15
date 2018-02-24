@@ -19,14 +19,9 @@
 </div>
 
 
-@*Table layout*@
-
 @{
-
     IEnumerable<IPublishedContent> selection = Model.Children.Where(x => x.IsVisible()).OrderBy(x => x.GetPropertyValue<int>("sortNo"));
-
     int size = selection.Count();
-
 }
 
 @for (int i = 0; i < selection.Count(); i++)
@@ -53,11 +48,11 @@
             resizeUrl = mediaFile.GetCropUrl(height: 200);
 
         }
-        <div style="text-align:center; vertical-align:bottom">
+        <div id="symbol-overview">
             <a href="@selection.ElementAt(i).Url">
-                <img src="@resizeUrl" alt="@selection.ElementAt(i).Name" style="width:auto;height:auto;max-width:100%;max-height:100%;" />
+                <img src="@resizeUrl" alt="@selection.ElementAt(i).Name" />
             </a>
-            <div style="margin-top:10px;margin-bottom:50px;">
+            <div>
                 <span>
                     @selection.ElementAt(i).GetPropertyValue("title") (@selection.ElementAt(i).Name). <a href="@selection.ElementAt(i).Url">Introduction</a>
                 </span>
@@ -67,229 +62,3 @@
     </div>
     @Html.Raw(i % 2 == 1 ? "</div>" : "")
 }
-
-
-
-
-
-
-    @* Two columns symbol layout *@
-    @*<div class="row">
-        <div class="col-sm-4">
-            @{
-
-                //IEnumerable<IPublishedContent> selection = Model.Children.Where(x => x.IsVisible()).OrderBy(x => x.GetPropertyValue<int>("sortNo"));
-
-                selection = Model.Children.Where(x => x.IsVisible()).OrderBy(x => x.GetPropertyValue<int>("sortNo"));
-                //int size = selection.Count();
-                size = selection.Count();
-                decimal columnOne = (decimal)size / 2;
-                int columnOneItems = (int)Math.Ceiling(columnOne);
-                decimal columnTwo = (decimal)(size - columnOneItems);
-            }
-
-
-            @for (int i = 0; i < columnOneItems; i++)
-            {
-                <div style="text-align:center">
-                    @if (selection.ElementAt(i).HasValue("imageFile"))
-                    {
-                        var imageFile = selection.ElementAt(i).GetPropertyValue<IPublishedContent>("imageFile");
-                        var mediaFile = Umbraco.TypedMedia(imageFile.Id);
-
-                        var height = mediaFile.GetPropertyValue<int>("umbracoHeight");
-                        var width = mediaFile.GetPropertyValue<int>("umbracoWidth");
-
-                        var resizeUrl = "";
-                        if (width >= height)
-                        {
-                            resizeUrl = mediaFile.GetCropUrl(width: 200);
-                        }
-                        else
-                        {
-                            resizeUrl = mediaFile.GetCropUrl(height: 200);
-
-                        }
-
-                        <a href="@selection.ElementAt(i).Url">
-                            <img src="@resizeUrl" alt="@selection.ElementAt(i).Name" style="width:auto;height:auto;max-width:100%;max-height:100%;" />
-                        </a>
-                        <div style="margin-top:10px;margin-bottom:50px;">
-                            <span>
-                                @selection.ElementAt(i).GetPropertyValue("title") (@selection.ElementAt(i).Name). <a href="@selection.ElementAt(i).Url">Introduction</a>
-                            </span>
-                        </div>
-                    }
-                </div>
-            }
-        </div>
-
-        <div class="col-sm-4">
-            @for (int i = columnOneItems; i < size; i++)
-            {
-                <div style="text-align:center">
-                    @if (selection.ElementAt(i).HasValue("imageFile"))
-                    {
-
-                        var imageFile = selection.ElementAt(i).GetPropertyValue<IPublishedContent>("imageFile");
-                        var mediaFile = Umbraco.TypedMedia(imageFile.Id);
-
-                        var height = mediaFile.GetPropertyValue<int>("umbracoHeight");
-                        var width = mediaFile.GetPropertyValue<int>("umbracoWidth");
-
-                        var resizeUrl = "";
-                        if (width >= height)
-                        {
-                            resizeUrl = mediaFile.GetCropUrl(width: 200);
-                        }
-                        else
-                        {
-                            resizeUrl = mediaFile.GetCropUrl(height: 200);
-
-                        }
-
-                        <a href="@selection.ElementAt(i).Url">
-                            <img src="@resizeUrl" alt="@selection.ElementAt(i).Name" style="width:auto;height:auto;max-width:100%;max-height:100%;" />
-                        </a>
-                        <div style="margin-top:10px;margin-bottom:50px;">
-                            <span>
-                                @selection.ElementAt(i).GetPropertyValue("title") (@selection.ElementAt(i).Name). <a href="@selection.ElementAt(i).Url">Introduction</a>
-                            </span>
-                        </div>
-                    }
-                </div>
-            }
-        </div>
-
-
-    </div>*@
-
-
-    @* Three column symbols layout *@
-    @*
-        <div class="row">
-            <div class="col-sm-4">
-                @{
-                    var selection = Model.Children.Where(x => x.IsVisible()).OrderBy(x => x.SortOrder);
-                    int size = selection.Count();
-                    decimal columnOne = (decimal)size / 3;
-                    int columnOneItems = (int)Math.Ceiling(columnOne);
-                    decimal columnTwo = (decimal)(size - columnOneItems) / 2;
-                    int columnTwoItems = (int)Math.Ceiling(columnTwo);
-                    int columnThreeItems = (size - (columnOneItems + columnTwoItems));
-                }
-
-
-                @for (int i = 0; i < columnOneItems; i++)
-                {
-                    <div style="text-align:center">
-                        @if (selection.ElementAt(i).HasValue("imageCrop"))
-                        {
-                            var imageFile = selection.ElementAt(i).GetPropertyValue<IPublishedContent>("imageFile");
-                            var mediaFile = Umbraco.TypedMedia(imageFile.Id);
-
-                            var height = mediaFile.GetPropertyValue<int>("umbracoHeight");
-                            var width = mediaFile.GetPropertyValue<int>("umbracoWidth");
-
-                            var cropUrl = "";
-                            if (width >= height)
-                            {
-                                cropUrl = selection.ElementAt(i).GetCropUrl(200, null, "imageCrop");
-                            }
-                            else
-                            {
-                                cropUrl = selection.ElementAt(i).GetCropUrl(null, 200, "imageCrop");
-
-                            }
-
-                            <a href="@selection.ElementAt(i).Url">
-                                <img src="@cropUrl" alt="@selection.ElementAt(i).Name" style="width:auto;height:auto;max-width:100%;max-height:100%;" />
-                            </a>
-                            <div style="margin-top:10px;margin-bottom:50px;">
-                                @selection.ElementAt(i).Name<text>:</text>
-                                <span>
-                                    @selection.ElementAt(i).GetPropertyValue("title"). <a href="@selection.ElementAt(i).Url">Introduction</a>
-                                </span>
-                            </div>
-                        }
-                    </div>
-                }
-            </div>
-
-            <div class="col-sm-4">
-                @for (int i = columnOneItems; i < size - columnThreeItems; i++)
-                {
-                    <div style="text-align:center">
-                        @if (selection.ElementAt(i).HasValue("imageCrop"))
-                        {
-
-                            var imageFile = selection.ElementAt(i).GetPropertyValue<IPublishedContent>("imageFile");
-                            var mediaFile = Umbraco.TypedMedia(imageFile.Id);
-
-                            var height = mediaFile.GetPropertyValue<int>("umbracoHeight");
-                            var width = mediaFile.GetPropertyValue<int>("umbracoWidth");
-
-                            var cropUrl = "";
-                            if (width >= height)
-                            {
-                                cropUrl = selection.ElementAt(i).GetCropUrl(200, null, "imageCrop");
-                            }
-                            else
-                            {
-                                cropUrl = selection.ElementAt(i).GetCropUrl(null, 200, "imageCrop");
-
-                            }
-
-                            <a href="@selection.ElementAt(i).Url">
-                                <img src="@cropUrl" alt="@selection.ElementAt(i).Name" style="width:auto;height:auto;max-width:100%;max-height:100%;" />
-                            </a>
-                            <div style="margin-top:10px;margin-bottom:50px;">
-                                @selection.ElementAt(i).Name<text>:</text>
-                                <span>
-                                    @selection.ElementAt(i).GetPropertyValue("title"). <a href="@selection.ElementAt(i).Url">Introduction</a>
-                                </span>
-                            </div>
-                        }
-                    </div>
-                }
-            </div>
-
-            <div class="col-sm-4">
-                @for (int i = columnOneItems + columnTwoItems; i < size; i++)
-                {
-                    <div style="text-align:center">
-                        @if (selection.ElementAt(i).HasValue("imageCrop"))
-                        {
-
-                            var imageFile = selection.ElementAt(i).GetPropertyValue<IPublishedContent>("imageFile");
-                            var mediaFile = Umbraco.TypedMedia(imageFile.Id);
-
-                            var height = mediaFile.GetPropertyValue<int>("umbracoHeight");
-                            var width = mediaFile.GetPropertyValue<int>("umbracoWidth");
-
-                            var cropUrl = "";
-                            if (width >= height)
-                            {
-                                cropUrl = selection.ElementAt(i).GetCropUrl(200, null, "imageCrop");
-                            }
-                            else
-                            {
-                                cropUrl = selection.ElementAt(i).GetCropUrl(null, 200, "imageCrop");
-
-                            }
-
-                            <a href="@selection.ElementAt(i).Url">
-                                <img src="@cropUrl" alt="@selection.ElementAt(i).Name" style="width:auto;height:auto;max-width:100%;max-height:100%;" />
-                            </a>
-                            <div style="margin-top:10px;margin-bottom:50px;">
-                                @selection.ElementAt(i).Name<text>:</text>
-                                <span>
-                                    @selection.ElementAt(i).GetPropertyValue("title"). <a href="@selection.ElementAt(i).Url">Introduction</a>
-                                </span>
-                            </div>
-                        }
-                    </div>
-                }
-            </div>
-        </div>
-    *@

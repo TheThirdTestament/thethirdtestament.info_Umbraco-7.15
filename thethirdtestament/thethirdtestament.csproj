@@ -497,7 +497,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\RTE.css" />
-    <Content Include="css\s.css" />
     <Content Include="css\style.css" />
     <Content Include="default.aspx" />
     <Content Include="docs\Login.txt" />
