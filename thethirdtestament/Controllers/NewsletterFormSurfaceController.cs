@@ -21,6 +21,7 @@ namespace TheThirdTestament.Controllers
             if (!ModelState.IsValid) { return CurrentUmbracoPage(); }
 
             MailMessage message = new MailMessage();
+			message.To.Add("jan@langekaer.dk");
             message.To.Add("jesarbov@gmail.dk");
             message.Subject = "thethirdtestament.info: Newsletter registration";
             message.From = new MailAddress(model.Email, model.Firstname + " " + model.Lastname);
