@@ -239,9 +239,9 @@ UpgradeLog*.XML
 UpgradeLog*.htm
 
 # SQL Server files
-*.ndf
-*.mdf
-*.ldf
+#*.ndf
+#*.mdf
+#*.ldf
 
 # Business Intelligence projects
 *.rdl.data
@@ -353,3 +353,8 @@ ASALocalRun/
 
 # Custom
 **/Docs/Login.txt
+
+# SQL Server files
+#*.ndf
+*.mdf
+*.ldf
