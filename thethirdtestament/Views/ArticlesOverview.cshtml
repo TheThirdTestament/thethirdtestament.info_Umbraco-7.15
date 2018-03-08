@@ -27,7 +27,7 @@
     </div>
     <div class="col-sm-4">
 
-        <h2>Other Texts and Excerpts by Martinus</h2>
+        <h2>Other Texts</h2>
         @foreach (ArticleItem articleItem in Model.Children.Where(x => x.GetPropertyValue<int>("category") != 121))
         {
             <div>
