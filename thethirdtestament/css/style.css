@@ -55,10 +55,12 @@ h1 {
     font-family: Times, 'Times New Roman', serif;
     margin-top: 2rem;
     font-size: 180%;
+	font-weight: bold;
 }
 h2 {
     font-family: Times, 'Times New Roman', serif;
     font-size: 140%;
+	font-weight: bold;
 }
 
 h3 {
@@ -69,6 +71,7 @@ h3 {
 
 h1.contact-form-header {
     margin-bottom: 1em;
+	font-weight: bold;
 }
 
 div.registration-form {
