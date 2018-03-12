@@ -356,5 +356,6 @@ ASALocalRun/
 
 # SQL Server files
 #*.ndf
-*.mdf
-*.ldf
+#*.mdf
+#*.ldf
+
