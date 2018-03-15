@@ -352,7 +352,10 @@ ASALocalRun/
 **/App_Data/Models/ood.flag
 
 # Custom
+
+# Security
 **/Docs/Login.txt
+Web.config
 
 # SQL Server files
 #*.ndf
