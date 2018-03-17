@@ -14,7 +14,7 @@ body {
 }
 
 #wrap {
-    padding-bottom: 4em;
+    padding-bottom: 6em;
 }
 
 div#logo {
@@ -38,8 +38,9 @@ div#site-sub-title {
     padding-bottom: 1rem;
 }
 
+/* bør formodentlig fjernes - ingen effekt - effekten ligger på wrap */
 div.main {
-    padding-bottom: 4em;   
+    padding-bottom: 4rem;   
 }
 
 .two-column-frontpage-image {
@@ -84,12 +85,6 @@ div.card {
     width: 90%;
     margin-bottom: 4em;
 }
-
-div.text-body {
-    padding-right: 5em;
-}
-
-
 
 
 li {
@@ -296,7 +291,9 @@ footer {
 
 .social-media .fa-youtube:hover {
         color: #f00;
-    }
+}
+
+
 
 /* Default breakpoints */
 /*Small devices (landscape phones, 576px and up)*/
@@ -348,6 +345,17 @@ footer {
         font-size: 200%;
         margin-bottom: 1rem;
     }
+
+    #wrap {
+        padding-bottom: 4em;
+    }
+    
+    div.text-body {
+        padding-right: 5em;
+    }
+
+
+
 
     .form-horizontal .control-label {
         text-align: right;
