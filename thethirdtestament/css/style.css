@@ -47,6 +47,10 @@ div.main {
     padding-top: 2em;
 }
 
+div.text-body {
+    padding-right: 1rem;
+}
+
 .article {
     padding-right: 0em;
 }
