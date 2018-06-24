@@ -23,10 +23,10 @@ namespace TheThirdTestament.Controllers
             MailMessage message = new MailMessage();
             message.To.Add("info @thethirdtestament.info");
             message.Bcc.Add("jan@langekaer.dk");
-            message.Bcc.Add("jesarbov@gmail.dk");
+            message.Bcc.Add("jesarbov@gmail.com");
             message.Subject = "thethirdtestament.info: Newsletter registration";
             message.From = new MailAddress(model.Email, model.Firstname + " " + model.Lastname);
-            message.Body = model.Email + "<br />" +  model.Firstname + " " + model.Lastname;
+            message.Body = model.Firstname + " " + model.Lastname + ": " + model.Email;
 
             using (SmtpClient smtp = new SmtpClient())
             {
@@ -39,7 +39,7 @@ namespace TheThirdTestament.Controllers
                 smtp.EnableSsl = true;
 
                 // send mail
-                //smtp.Send(message);
+                smtp.Send(message);
                 TempData["success"] = true;
             }
 
