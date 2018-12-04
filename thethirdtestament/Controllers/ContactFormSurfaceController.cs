@@ -3,7 +3,7 @@ using System.Net.Mail;
 using System.Web.Mvc;
 using Umbraco.Core.Models;
 using Umbraco.Web.Mvc;
-
+using reCAPTCHA.MVC;
 
 namespace TheThirdTestament.Controllers
 {
@@ -16,13 +16,19 @@ namespace TheThirdTestament.Controllers
         }
 
         [HttpPost]
+        [CaptchaValidator]
         public ActionResult HandleFormSubmit(ContactMessage model)
         {
+
+            //if (!captchaValid)
+            //{
+            //    ModelState.AddModelError("_FORM", "You did not type the verification word correctly. Please try again.");
+            //}
             if (!ModelState.IsValid) { return CurrentUmbracoPage(); }
 
             MailMessage message = new MailMessage();
-            message.To.Add("info@thethirdtestament.info");
-            message.CC.Add("jan@langekaer.dk");
+            message.To.Add("mail@thethirdtestament.info");
+            //message.CC.Add("jan@langekaer.dk");
             message.CC.Add("jesarbov@gmail.com");
             message.Subject = "Mail from thethirdtestament.info: " + model.Subject;
             message.From = new MailAddress(model.Email, model.Name);
