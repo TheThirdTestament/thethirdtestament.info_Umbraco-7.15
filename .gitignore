@@ -358,7 +358,7 @@ ASALocalRun/
 Web.config
 
 # SQL Server files
-#*.ndf
-#*.mdf
-#*.ldf
+*.ndf
+*.mdf
+*.ldf
 
