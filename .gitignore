@@ -353,14 +353,14 @@ ASALocalRun/
 
 # Custom
 
+# Custom
 # Security
 **/Docs/Login.txt
-**/Web.config
-**/Web.Release.config
-**/Web.Debug.config
+web.config
+Web.Release.config
+Web.Debug.config
 
 # SQL Server files
-*.ndf
 *.mdf
 *.ldf
 
