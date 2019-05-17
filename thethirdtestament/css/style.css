@@ -145,6 +145,10 @@ a.nav-link, a:visited.nav-link, a:link.nav-linkactive {
     text-transform: uppercase;
 }
 
+a:hover#header {
+    text-decoration: none;
+}
+
 div.dropdown-menu a {
     font-weight:normal;
 }
@@ -161,9 +165,13 @@ nav.navbar {
     border-bottom: solid 2px;
 }
 
-nav ul.navbar-nav > li.nav-item {
-    padding: 0 10px 0 10px;
-    display: block;
+nav.navbar {
+    background-color: #fff;
+    padding: 0;
+    border-top: solid 1px;
+    border-top-color: #ddd;
+    border-bottom: solid 2px;
+    border-bottom-color: #ddd;
 }
 
 nav div#navbarSupportedContent {
