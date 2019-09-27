@@ -9,6 +9,7 @@
 *.userosscache
 *.sln.docstates
 
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -351,9 +352,8 @@ ASALocalRun/
 # Ignore the Models Builder models out of date flag
 **/App_Data/Models/ood.flag
 
-# Custom
 
-# Custom
+
 # Security
 **/Docs/Login.txt
 web.config
@@ -362,6 +362,9 @@ Web.Debug.config
 
 
 # SQL Server files
-*.mdf
-*.ldf
+**/App_Data/*.mdf
+**/App_Data/*.ldf
+**/App_Data/*.*
 
+# Custom
+*.pdf
